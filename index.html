@@ -1,1 +1,24 @@
-service
+<!DOCTYPE html>
+<html lang="en">
+  	<head></head>
+    <body>
+    	<p>Registration status: <strong id="status"></strong></p>
+		<script>
+		 	if ('serviceWorker' in navigator) {
+		  		navigator.serviceWorker.register(
+		     		'index.js',
+		     		{ scope: './' }
+		   		).then( function(serviceWorker) {
+		     		document.getElementById('status').innerHTML = 'successful';
+		     	}).catch(function(error) {
+		         	document.getElementById('status').
+		         	innerHTML = error;
+				}); 
+		    } else {
+		       document.getElementById('status').
+		       innerHTML = 'unavailable';
+			} 
+		</script>
+    </body>
+</html>
+
