@@ -1,4 +1,3 @@
-import("pouchdb.min.js")
 self.addEventListener('install', function(e) {
   	console.log('Install Event:', e);
 });
